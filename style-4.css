@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: #050505;
+  color: #f4f4f4;
+  font-family: Inter, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 72% 42%, rgba(255,255,255,.025), transparent 32%),
+    #050505;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  width: min(560px, 43vw);
+  margin-left: clamp(32px, 9vw, 140px);
+  padding-top: clamp(120px, 27vh, 215px);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #bdbdbd;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .22em;
+  margin-bottom: 24px;
+}
+.eyebrow span { width: 62px; height: 2px; background: #aaa; display: inline-block; }
+
+h1 {
+  margin: 0;
+  font-size: clamp(56px, 5.2vw, 84px);
+  line-height: .92;
+  white-space: nowrap;
+  letter-spacing: -.055em;
+  font-weight: 700;
+}
+h1 strong { color: #b8b8b8; font-weight: 800; }
+
+.roles {
+  margin: 30px 0 36px;
+  color: #8d8d8d;
+  font-size: clamp(16px, 1.45vw, 20px);
+  line-height: 1.5;
+}
+.roles i { font-style: normal; color: #aaa; padding: 0 13px; }
+
+.socials {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.socials a {
+  width: 76px;
+  color: #888;
+  text-decoration: none;
+  text-align: center;
+  transition: transform .2s ease, color .2s ease;
+}
+.socials a:hover { transform: translateY(-5px); color: #d0d0d0; }
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 10px;
+  border: 1px solid #3a3a3a;
+  border-radius: 50%;
+  color: #b5b5b5;
+  font-size: 25px;
+  background: rgba(20,20,20,.55);
+  box-shadow: inset 0 0 0 7px rgba(80,80,80,.12);
+}
+small { font-size: 12px; white-space: nowrap; }
+
+.portrait-wrap {
+  position: absolute;
+  z-index: 2;
+  right: -2vw;
+  top: 0;
+  width: min(66vw, 1010px);
+  height: 100%;
+  pointer-events: none;
+}
+.portrait-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: contrast(1.03);
+  mix-blend-mode: screen;
+  opacity: .92;
+}
+
+.blob {
+  position: absolute;
+  z-index: 1;
+  background: #000;
+  border-radius: 48% 52% 44% 56%;
+  filter: blur(.2px);
+}
+.blob-1 { width: 190px; height: 230px; left: -55px; top: -80px; transform: rotate(27deg); }
+.blob-2 { width: 155px; height: 225px; right: -35px; top: 10px; transform: rotate(61deg); }
+.blob-3 { width: 240px; height: 170px; left: 75px; bottom: -90px; transform: rotate(12deg); }
+
+@media (max-width: 900px) {
+  .hero { min-height: 100svh; }
+  .content {
+    width: auto;
+    margin: 0;
+    padding: 72px 28px 0;
+  }
+  h1 { font-size: clamp(52px, 13vw, 82px); }
+  .roles { font-size: 15px; margin-top: 24px; }
+  .roles i { padding: 0 7px; }
+  .portrait-wrap {
+    width: 100%;
+    height: 64vh;
+    top: auto;
+    bottom: -2vh;
+    right: -18%;
+    opacity: .42;
+  }
+  .socials { gap: 8px; flex-wrap: wrap; }
+  .socials a { width: 70px; }
+}
+
+@media (max-width: 520px) {
+  .content { padding: 52px 22px 0; }
+  .eyebrow { font-size: 11px; gap: 10px; }
+  .eyebrow span { width: 42px; }
+  h1 { font-size: 52px; }
+  .roles { max-width: 290px; }
+  .socials { margin-top: 4px; }
+  .icon { width: 52px; height: 52px; font-size: 21px; }
+  small { font-size: 10px; }
+  .portrait-wrap { height: 56vh; right: -34%; opacity: .34; }
+}
+
+
+.icon svg {
+  width: 27px;
+  height: 27px;
+  display: block;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+.instagram-logo svg { fill: none; }
+.instagram-logo svg .fill { fill: currentColor; stroke: none; }
+.youtube-logo svg { stroke: none; }
+.youtube-logo svg .cut { fill: #050505; }
+.spotify-logo svg { fill: none; stroke-width: 1.7; }
+.spotify-logo svg .cut { fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 1.6; }
+.tiktok-logo svg { fill: currentColor; stroke: none; }
+
+@media (max-width: 1100px) {
+  h1 { font-size: clamp(52px, 5.7vw, 72px); }
+  .content { width: 46vw; }
+}
+
+@media (max-width: 900px) {
+  h1 { white-space: normal; font-size: clamp(52px, 13vw, 82px); }
+}
